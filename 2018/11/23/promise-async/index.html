@@ -16,11 +16,11 @@
         <meta name="description" content="promise- ES6 문법- resolve 결과가 then, reject가 catch문으로 가게 됨
 
 
-async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
+async/await- ES8 문법- 코드의 간결성- 동기식으로 처리- await뒤에는 항상 프로미스를 반환해야한다.
 
 
 차이점 정리
-1. 에러처리 promise문에서 getJSON을 통해서 데이터를 받아오는 부">
+1. 에러처리 promise문">
     
 
     <!--Author-->
@@ -38,11 +38,11 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
         <meta property="og:description" content="promise- ES6 문법- resolve 결과가 then, reject가 catch문으로 가게 됨
 
 
-async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
+async/await- ES8 문법- 코드의 간결성- 동기식으로 처리- await뒤에는 항상 프로미스를 반환해야한다.
 
 
 차이점 정리
-1. 에러처리 promise문에서 getJSON을 통해서 데이터를 받아오는 부">
+1. 에러처리 promise문">
     
 
     <!--Open Graph Site Name-->
@@ -125,7 +125,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Configurable Title</a>
+            <a class="navbar-brand" href="/">juzzing's</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -133,7 +133,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
             <ul class="nav navbar-nav navbar-right">
                 
                     <li>
-                        <a href="/">
+                        <a href="/juzzing's">
                             
                                 Home
                             
@@ -149,7 +149,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
                     </li>
                 
                     <li>
-                        <a href="/tags">
+                        <a href="/javascript">
                             
                                 Tags
                             
@@ -165,7 +165,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
                     </li>
                 
                     <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                        <a href="https://github.com/juuuuuuuuuuuuuu">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -219,7 +219,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
                 <h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><ol><br>- ES6 문법<br>- resolve 결과가 then, reject가 catch문으로 가게 됨<br></ol>
 
 
-<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><ol><br>- ES8 문법<br>- 코드의 간결성<br>- 동기식으로 처리<br></ol>
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><ol><br>- ES8 문법<br>- 코드의 간결성<br>- 동기식으로 처리<br>- await뒤에는 항상 프로미스를 반환해야한다.<br></ol>
 
 <p><br></p>
 <h2 id="차이점-정리"><a href="#차이점-정리" class="headerlink" title="차이점 정리"></a>차이점 정리</h2><p><br></p>
@@ -230,6 +230,9 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">makeRequest = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getJSON()</span><br><span class="line">        .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.makeAnotherRequest(data)</span><br><span class="line">                .then(<span class="function"><span class="params">moreData</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(moreData)</span><br><span class="line">                    <span class="keyword">return</span> moreData</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">makeRequest = <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="keyword">this</span>.getJSON()</span><br><span class="line">    <span class="keyword">const</span> moreData = <span class="keyword">await</span> <span class="keyword">this</span>.makeAnotherRequest(data)</span><br><span class="line">    <span class="built_in">console</span>.log(moreData)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-디버깅"><a href="#3-디버깅" class="headerlink" title="3. 디버깅"></a>3. 디버깅</h3><p> promise는 then블록 내에 디버깅을 찍으면 동기적으로 이동하기 때문에 다음 then으로 이동하지 않는다.<br> 반면 async/await는 바로 다음 await로 이동을 하기 때문에 디버깅하는데 편리하다.</p>
+<h3 id="async-await에서-동시에-비동기적으로-값을-가져와야할-때"><a href="#async-await에서-동시에-비동기적으로-값을-가져와야할-때" class="headerlink" title="async/await에서 동시에 비동기적으로 값을 가져와야할 때?"></a>async/await에서 동시에 비동기적으로 값을 가져와야할 때?</h3><p>이때는 <code>Promise.all()</code>을 사용한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> job = <span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"x"</span>, x)</span><br><span class="line">                    resolve(x);</span><br><span class="line">                &#125;, x * <span class="number">100</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">timeStamp = <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">const</span> result <span class="keyword">of</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.all([job(<span class="number">3</span>), job(<span class="number">6</span>), job(<span class="number">9</span>)])) &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(result) <span class="comment">//총 걸리는 시간은?? 15초이다!</span></span><br><span class="line">     &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>그러나 ES9에 도입된 <code>for await</code>가 이를 대체해준다.<br><code>for await</code>는 for of문에서 처리가능하며 반복적인 비동기 작업을 쉽게 처리해준다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">timeStamp = <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> promises = [<span class="number">3</span>, <span class="number">6</span>, <span class="number">9</span>].map(<span class="function">(<span class="params">timer</span>) =&gt;</span> (</span><br><span class="line">        <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">res, req</span>) =&gt;</span> &#123; <span class="comment">// 총 걸리는 시간은 15초!</span></span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> res(timer), timer * <span class="number">1000</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    ))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> <span class="keyword">await</span> (<span class="keyword">const</span> result <span class="keyword">of</span> promises) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p> promise를 대체해서 어떤 경우에서든지 async/await를 사용하는 것을 좋지 않다. 새로운 문법들이 계속 등장하는데 꼭 좋은 것만은 아니라고 한다.<br> 적재적소로 필요할 때 사용하는게 제일 좋다. 본인한테 맞고 잘 사용할 수 있는게 좋다.<br> 새로운 것들이 등장하는 것은 단지 이용을 편리하게 해주는것이므로…</p>
 
 
@@ -263,7 +266,7 @@ async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
 
                     
                         <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+
+
+    
+        <meta name="description" content="ES8부터 도입된 async/await는 iterator/generator로 부터 파생되었다.async/await의 사용하기 전에 iterator/generator부터 알아보자!
+iterator내부적으로 반복처리[Symbol.iterator] 반복되는 규칙을 내부적으로">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="iterator/generator와 async/await비교">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="ES8부터 도입된 async/await는 iterator/generator로 부터 파생되었다.async/await의 사용하기 전에 iterator/generator부터 알아보자!
+iterator내부적으로 반복처리[Symbol.iterator] 반복되는 규칙을 내부적으로">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://juzzing2.github.io.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://juzzing2.github.io.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>iterator/generator와 async/await비교 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">juzzing's</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/juzzing's">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/javascript">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>iterator/generator와 async/await비교</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-23
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>ES8부터 도입된 async/await는 iterator/generator로 부터 파생되었다.<br>async/await의 사용하기 전에 iterator/generator부터 알아보자!</p>
+<h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><p>내부적으로 반복처리<br><code>[Symbol.iterator]</code> 반복되는 규칙을 내부적으로 처리하는 것을 만드는 부분</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//피보나치 수열 예제</span></span><br><span class="line"><span class="keyword">let</span> fibonacci = &#123;</span><br><span class="line">    maxStep: <span class="number">20</span>,</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">        <span class="keyword">let</span> pre = <span class="number">0</span>, cur = <span class="number">1</span>, step = <span class="number">0</span>, maxStep = <span class="keyword">this</span>.maxStep;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            next() &#123;</span><br><span class="line">                [pre, cur] = [cur, pre + cur];</span><br><span class="line">                <span class="keyword">return</span> &#123;<span class="attr">done</span>: step ++ &gt;= maxStep, <span class="attr">value</span>: cur&#125; <span class="comment">//상태값과 value를 리턴해줌</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n <span class="keyword">of</span> fibonacci) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(n)    <span class="comment">// 1,2,3,5,8,13,21,34 ....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h3><p>generator는 iterator의 특징이자 단점인 무한 반복을 해결해준다.<br>next해서 접근 가능 하며 기존의  {done, value}를 자동으로 리턴해준다.<br>사용법은 function앞에 <em>(반복기)을 붙이고 yield는 value를 정해준다.<br>yield가 있는 시점에서 함수의 실행을멈추며 yield</em>도 가능하다(문자열, 배열, 다른 반복기 값 가능)</p>
+<p><img src="/images/generator.png" alt=""></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">factorialGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> cur = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        [count, cur] = [count + <span class="number">1</span>, cur * count]</span><br><span class="line">        <span class="keyword">yield</span> cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> factorial = factorialGenerator();</span><br><span class="line">factorial.next().value <span class="comment">// 1</span></span><br><span class="line">factorial.next().value <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myObj = &#123;&#125;;</span><br><span class="line">myObj[<span class="built_in">Symbol</span>.iterator] = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"1"</span>; <span class="comment">//단일 값이 전달</span></span><br><span class="line">    <span class="keyword">yield</span>* [<span class="number">2</span>,<span class="number">3</span>];  <span class="comment">//yield* 로 값을 반환하면 --&gt; 해당 값이 다시 하나의 iterator로 취급되어 내부루프 처리하듯 순서대로 처리함 //배열</span></span><br><span class="line">    <span class="keyword">yield</span>* <span class="string">"45"</span>; <span class="comment">//문자열</span></span><br><span class="line">    <span class="keyword">yield</span>* innerGenerator(); <span class="comment">//다른 반복기 값</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"9"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">innerGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">yield</span>* <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">"7"</span>, <span class="string">"8"</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([...myObj]) <span class="comment">// ["1", 2, 3, "4", "5", 6, "7", "8", "9"]</span></span><br></pre></td></tr></table></figure>
+<h3 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h3><p>비동기를 동기처럼 보이게 한다. try, catch문을 사용해한다.<br>기존의  * =&gt;  async, yield =&gt; await로 바뀐다.</p>
+<p>아래 코드는 async/await로 작성하는게 generator로 코드를 짜는것 보다 훨씬 가독성도 높고 코드가 간단하다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'test'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">generator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> users = <span class="keyword">yield</span> getUser();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"user"</span>, users)</span><br><span class="line">    <span class="keyword">return</span> users;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> iterator = generator();</span><br><span class="line"><span class="keyword">const</span> iteration = iterator.next();<span class="comment">//generator함수 실행</span></span><br><span class="line"></span><br><span class="line">iteration.value.then(</span><br><span class="line">    resolve =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> nextIteration = iterator.next(resolve);</span><br><span class="line">        nextIteration;</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">'test'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">generator2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> users = <span class="keyword">await</span> getUser();</span><br><span class="line">    <span class="built_in">console</span>.log(users)</span><br><span class="line">    <span class="keyword">return</span> users;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">generator2();</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
