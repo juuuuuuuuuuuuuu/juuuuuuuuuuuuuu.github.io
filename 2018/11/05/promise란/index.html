@@ -9,9 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--Description-->
-
     
 
+
+    
+        <meta name="description" content="promise- ES6 문법- resolve 결과가 then, reject가 catch문으로 가게 됨
+
+
+async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
+
+
+차이점 정리
+1. 에러처리 promise문에서 getJSON을 통해서 데이터를 받아오는 부">
     
 
     <!--Author-->
@@ -21,10 +30,19 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="promise란?">
+        <meta property="og:title" content="promise와 async/wait 비교">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="promise- ES6 문법- resolve 결과가 then, reject가 catch문으로 가게 됨
+
+
+async/await- ES8 문법- 코드의 간결성- 동기식으로 처리
+
+
+차이점 정리
+1. 에러처리 promise문에서 getJSON을 통해서 데이터를 받아오는 부">
     
 
     <!--Open Graph Site Name-->
@@ -51,7 +69,7 @@
 
     <!-- Title -->
     
-    <title>promise란? - Hexo</title>
+    <title>promise와 async/wait 비교 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -60,9 +78,15 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -80,6 +104,9 @@
 
     <!-- favicon -->
     
+
+
+
 
 </head>
 
@@ -161,7 +188,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>promise란?</h1>
+                    <h1>promise와 async/wait 비교</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -189,7 +216,22 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><ol><br>- ES6 문법<br>- resolve 결과가 then, reject가 catch문으로 가게 됨<br></ol>
+
+
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><ol><br>- ES8 문법<br>- 코드의 간결성<br>- 동기식으로 처리<br></ol>
+
+<p><br></p>
+<h2 id="차이점-정리"><a href="#차이점-정리" class="headerlink" title="차이점 정리"></a>차이점 정리</h2><p><br></p>
+<h3 id="1-에러처리"><a href="#1-에러처리" class="headerlink" title="1. 에러처리"></a>1. 에러처리</h3><p> promise문에서 getJSON을 통해서 데이터를 받아오는 부분과 JSON.parse하는 부분에서 catch문을 사용해서 에러를 잡아야한다.<br> 반면에 async/await 구문에서는 try, catch에서 모든 에러를 다 한번에 잡을 수 있다. 코드가 훨씬 깔끔해질 수 있다.<br> 그러나 실무에서 에러가 발생할때 정확하게 어느 구문에서 발생했는지 알 수 없다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">makerequest = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.getJSON(<span class="string">'a'</span>)</span><br><span class="line">            .then(<span class="function"><span class="params">result</span> =&gt;</span>&#123;</span><br><span class="line">                <span class="keyword">const</span> data = <span class="built_in">JSON</span>.parse(result);</span><br><span class="line">        &#125;).catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">1</span>, err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">makerequest = <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">   <span class="keyword">try</span> &#123;</span><br><span class="line">       <span class="built_in">JSON</span>.parse(<span class="keyword">await</span> <span class="keyword">this</span>.getJSON(<span class="string">'a'</span>))</span><br><span class="line">   &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"Err"</span>, err)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-중간값-처리"><a href="#2-중간값-처리" class="headerlink" title="2. 중간값 처리"></a>2. 중간값 처리</h3><p> 예를 들어서 사용자의 정보를 받아온 다음 그 정보를 바탕으로 새로운 api를 호출해야하는 경우가 있다.<br> 이 경우 async/await를 사용하면 좀 더 편하게 코드를 짤 수 있다. 사실 이부분이 async/await를 사용하는 가장 큰 이유라고 생각한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">makeRequest = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.getJSON()</span><br><span class="line">        .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.makeAnotherRequest(data)</span><br><span class="line">                .then(<span class="function"><span class="params">moreData</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(moreData)</span><br><span class="line">                    <span class="keyword">return</span> moreData</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">makeRequest = <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> <span class="keyword">this</span>.getJSON()</span><br><span class="line">    <span class="keyword">const</span> moreData = <span class="keyword">await</span> <span class="keyword">this</span>.makeAnotherRequest(data)</span><br><span class="line">    <span class="built_in">console</span>.log(moreData)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-디버깅"><a href="#3-디버깅" class="headerlink" title="3. 디버깅"></a>3. 디버깅</h3><p> promise는 then블록 내에 디버깅을 찍으면 동기적으로 이동하기 때문에 다음 then으로 이동하지 않는다.<br> 반면 async/await는 바로 다음 await로 이동을 하기 때문에 디버깅하는데 편리하다.</p>
+<h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p> promise를 대체해서 어떤 경우에서든지 async/await를 사용하는 것을 좋지 않다. 새로운 문법들이 계속 등장하는데 꼭 좋은 것만은 아니라고 한다.<br> 적재적소로 필요할 때 사용하는게 제일 좋다. 본인한테 맞고 잘 사용할 수 있는게 좋다.<br> 새로운 것들이 등장하는 것은 단지 이용을 편리하게 해주는것이므로…</p>
+
 
                 
             </div>

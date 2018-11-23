@@ -13,7 +13,7 @@
 .serif,
 body,
 .intro-header .post-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Montserrat', "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "돋움", dotum, serif;
 }
 .sans-serif,
 h1,
@@ -29,7 +29,7 @@ h6,
 .btn,
 .pager li > a,
 .pager li > span {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', "NanumSquareRound", "Malgun Gothic", "맑은 고딕", "돋움", dotum, serif;
 }
 body {
   font-size: 20px;
