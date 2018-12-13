@@ -13,6 +13,10 @@
 
 
     
+        <meta name="description" content="이거 땨문에 오후 내내 잡아먹었다.
+자꾸 node_modules내에 있는 라이브러리가 현재 A라는 프로젝트의 abc 폴더의 경로를 보고 있었다.분명 최근에 A라는 프로젝트에서 세팅이나 이런것들이 수정된 것들이 없고 다른 쪽에서 땡겨서 쓸 때도 문제가 없었는데 말이다.
+">
+    
 
     <!--Author-->
     
@@ -21,10 +25,14 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="webpack.cofig파일 경로 꼬임 현상">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="이거 땨문에 오후 내내 잡아먹었다.
+자꾸 node_modules내에 있는 라이브러리가 현재 A라는 프로젝트의 abc 폴더의 경로를 보고 있었다.분명 최근에 A라는 프로젝트에서 세팅이나 이런것들이 수정된 것들이 없고 다른 쪽에서 땡겨서 쓸 때도 문제가 없었는데 말이다.
+">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +40,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +59,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018 - Hexo</title>
+    <title>webpack.cofig파일 경로 꼬임 현상 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -162,127 +170,65 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>webpack.cofig파일 경로 꼬임 현상</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/12/04/react16/">
-        <h1 class="post-title archive">
-            react16 주요기능
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-04
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>이거 땨문에 오후 내내 잡아먹었다.</p>
+<p>자꾸 <code>node_modules</code>내에 있는 라이브러리가 현재 A라는 프로젝트의 abc 폴더의 경로를 보고 있었다.<br>분명 최근에 A라는 프로젝트에서 세팅이나 이런것들이 수정된 것들이 없고 다른 쪽에서 땡겨서 쓸 때도 문제가 없었는데 말이다.</p>
+<p>기존 구조는  A 프로젝트 - B 프로젝트 - C 프로젝트 이렇게 되어있었다.<br>그런데 5일전 C라는 프로젝트에서 D 프로젝트를 가져다 쓰고 있었다. ( A 프로젝트 - B 프로젝트 - C 프로젝트 - D 프로젝트)</p>
+<p>그리고 A라를 프로젝트의 <code>webpack.config</code>파일에 경로가 문제였다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line">resolve &#123;</span><br><span class="line">   alias: &#123;</span><br><span class="line">       <span class="string">'abc'</span>: path.resolve(__dirname, <span class="string">'abc'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line">resolve &#123;</span><br><span class="line">   alias: &#123;</span><br><span class="line">       <span class="string">'abc/lib'</span>: path.resolve(__dirname, <span class="string">'node_modules/abc/lib'</span>);</span><br><span class="line">       <span class="string">'abc'</span>: path.resolve(__dirname, <span class="string">'abc'</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>빌드를 돌면서 D라는 프로젝트에서 해당 경로를 abc로 잡는것!!<br>이것이 문제였다.</p>
+<p>결국 경로를 저렇게 수정했다!<br>여기서도 abc1먼저 써야한다. abc2를 먼저 뜨면 덮어쓰더라…<br>이렇게 고쳐서 해결했숩니다!!</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/11/28/problem/">
-        <h1 class="post-title archive">
-            webpack.cofig파일 경로 꼬임 현상
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/11/23/closer/">
-        <h1 class="post-title archive">
-            클로저(closer)란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/iterator/">
-        <h1 class="post-title archive">
-            iterator/generator와 async/await비교
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/cause/">
-        <h1 class="post-title archive">
-            hexo 포스팅시 404뜨는 경우
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/promise-async/">
-        <h1 class="post-title archive">
-            promise와 async/await비교
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/02/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-02
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
