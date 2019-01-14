@@ -14,7 +14,8 @@
 
     
         <meta name="description" content="기존에 배열같은 경우는 반복문을 사용할 때 용도에 따라서 forEach 와 map을 사용했었다.그런데 Object같은 경우는 반복문을 어떻게 사용해야하는지 순간 까먹었었다.그래서 반복문에 대해서 정리가 필요했다.
-1.forEachforEach문 밖으로 리턴값을 받지 못">
+
+forEachforEach문 밖으로 리턴값을 받지 못한">
     
 
     <!--Author-->
@@ -30,7 +31,8 @@
     <!--Open Graph Description-->
     
         <meta property="og:description" content="기존에 배열같은 경우는 반복문을 사용할 때 용도에 따라서 forEach 와 map을 사용했었다.그런데 Object같은 경우는 반복문을 어떻게 사용해야하는지 순간 까먹었었다.그래서 반복문에 대해서 정리가 필요했다.
-1.forEachforEach문 밖으로 리턴값을 받지 못">
+
+forEachforEach문 밖으로 리턴값을 받지 못한">
     
 
     <!--Open Graph Site Name-->
@@ -219,9 +221,11 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p>기존에 배열같은 경우는 반복문을 사용할 때 용도에 따라서 <code>forEach</code> 와 <code>map</code>을 사용했었다.<br>그런데 <code>Object</code>같은 경우는 반복문을 어떻게 사용해야하는지 순간 까먹었었다.<br>그래서 반복문에 대해서 정리가 필요했다.</p>
-<p>1.<code>forEach</code><br>forEach문 밖으로 리턴값을 받지 못한다. 사용할때는 for문안에서 어떤한 작업을 하고 싶을 때 사용한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = arr.forEach(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123; <span class="keyword">return</span> v;&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>, b); <span class="comment">//undefiend</span></span><br></pre></td></tr></table></figure></p>
-<ol start="2">
-<li><p><code>map</code><br>새로운 배열을 리턴하낟.<br>성능면에서도 map이 더 우수하다. map사용을 권장하는 분위기이다. </p>
+<ol>
+<li><p><code>forEach</code><br>forEach문 밖으로 리턴값을 받지 못한다. 사용할때는 for문안에서 어떤한 작업을 하고 싶을 때 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = arr.forEach(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123; <span class="keyword">return</span> v;&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>, b); <span class="comment">//undefiend</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>map</code><br>새로운 배열을 리턴한다.<br>성능면에서도 map이 더 우수하다. map사용을 권장하는 분위기이다. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = arr.forEach(<span class="function">(<span class="params">v</span>) =&gt;</span> &#123; <span class="keyword">return</span> v + <span class="number">1</span>;&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"b"</span>, b); <span class="comment">//[2,3,4]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>for in</code><br>객체의 속성들을 반복하여 작업수행 가능하다. key값에 접근할 수만있다.<br>여기서 <code>hasOwnProperty</code>로 각각의 object값들을 빼도 된다.<br><code>hasOwnProperty</code>는 자신의 고유 속성, 즉 상속받은 프로퍼티가 아닌 순수 자신의 속성인 경우에만 값을 true로 반환한다.</p>
@@ -229,9 +233,10 @@
 </li>
 <li><p><code>for of</code><br>ES6에 추가된 반복구문이다. 컬렉션 객체가 <code>[Symbol.iterator]</code>속성을 가지고 있어야만한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> iterable = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> value <span class="keyword">of</span> iterable) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// 10, 20, 30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>객체를 반복문 돌리는 방법</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">first</span>: <span class="string">"John"</span>, <span class="attr">last</span>: <span class="string">"Doe"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key, obj[key]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>객체를 반복문 돌리는 방법<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">first</span>: <span class="string">"John"</span>, <span class="attr">last</span>: <span class="string">"Doe"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(obj).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key, obj[key]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">of</span> <span class="built_in">Object</span>.keys(obj)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key, obj[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.entries(obj).forEach(</span><br><span class="line">    ([key, value]) =&gt; <span class="built_in">console</span>.log(key, value)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
