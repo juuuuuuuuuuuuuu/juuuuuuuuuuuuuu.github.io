@@ -13,8 +13,26 @@
 
 
     
-        <meta name="description" content="기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다.react 15.3.2 –&amp;gt; 16.7.0webpack 1.13.2 –&amp;gt; 4.19.0babel 6.2.5 –&amp;gt; 7.0.0
-babel7+ 버전부터는 babel-plugin-syntax-trailin">
+        <meta name="description" content="기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다. 
+
+
+
+기존버전
+신규버전
+
+
+
+
+react 15.3.2
+react 16.7.0
+
+
+webpack 1.13.2
+webpack 4.19.0
+
+
+babel-loader 6.2.5
+babel-loader: 7.0.0">
     
 
     <!--Author-->
@@ -29,8 +47,26 @@ babel7+ 버전부터는 babel-plugin-syntax-trailin">
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다.react 15.3.2 –&amp;gt; 16.7.0webpack 1.13.2 –&amp;gt; 4.19.0babel 6.2.5 –&amp;gt; 7.0.0
-babel7+ 버전부터는 babel-plugin-syntax-trailin">
+        <meta property="og:description" content="기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다. 
+
+
+
+기존버전
+신규버전
+
+
+
+
+react 15.3.2
+react 16.7.0
+
+
+webpack 1.13.2
+webpack 4.19.0
+
+
+babel-loader 6.2.5
+babel-loader: 7.0.0">
     
 
     <!--Open Graph Site Name-->
@@ -203,7 +239,7 @@ babel7+ 버전부터는 babel-plugin-syntax-trailin">
                         
 
 
-<a href="/tags/react-router-v4/">#react-router v4</a>
+<a href="/tags/react-router-v4-react16-wepack4-babel7/">#react-router v4, react16, wepack4, babel7</a>
 
 
                     
@@ -218,10 +254,37 @@ babel7+ 버전부터는 babel-plugin-syntax-trailin">
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다.<br>react 15.3.2 –&gt; 16.7.0<br>webpack 1.13.2 –&gt; 4.19.0<br>babel 6.2.5 –&gt; 7.0.0</p>
+                <p>기존 프로젝트 버전 업하는 작업을 하기전 테스트를 해보았다. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">기존버전</th>
+<th style="text-align:center">신규버전</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">react 15.3.2</td>
+<td style="text-align:center">react 16.7.0</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack 1.13.2</td>
+<td style="text-align:center">webpack 4.19.0</td>
+</tr>
+<tr>
+<td style="text-align:left">babel-loader 6.2.5</td>
+<td style="text-align:center">babel-loader: 7.0.0</td>
+</tr>
+<tr>
+<td style="text-align:left">babel-core 6.14.0</td>
+<td style="text-align:center">babel-core 7.0.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Babel7"><a href="#Babel7" class="headerlink" title="Babel7"></a>Babel7</h2><p>.babelrc 파일에 설정을 해줘야한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    <span class="string">"@babel/preset-env"</span>,</span><br><span class="line">    <span class="string">"@babel/preset-react"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"plugins"</span>: [</span><br><span class="line">    <span class="string">"@babel/plugin-transform-object-assign"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-proposal-class-properties"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-transform-async-to-generator"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-transform-regenerator"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-syntax-export-default-from"</span>,</span><br><span class="line">    <span class="string">"transform-export-extensions"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-syntax-dynamic-import"</span>,</span><br><span class="line">    <span class="string">"@babel/plugin-syntax-object-rest-spread"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>babel7+ 버전부터는 <code>babel-plugin-syntax-trailing-function-commas</code> 를 사용하여 파라미터들을 나열할 때 마지막 파라미터에  콤마(,)를 허용한다.<br>그러나  마지막 파라미터에  object spread 연산자가 있는 경우  콤마 (,)  를 허용하지 않는다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line"> style,</span><br><span class="line"> color,</span><br><span class="line"> width, <span class="comment">// 가능</span></span><br><span class="line">&#125;  = <span class="keyword">this</span>.props;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line"> style,</span><br><span class="line"> color,</span><br><span class="line"> ...other, ---&gt; 이 부분을 ...other로 수정</span><br><span class="line">&#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
-<h2 id="Router-v4-browserRouter-webpack-설정"><a href="#Router-v4-browserRouter-webpack-설정" class="headerlink" title="Router v4 - browserRouter (webpack 설정)"></a>Router v4 - browserRouter (webpack 설정)</h2><p> <code>react-router v4</code>부터는 라우터가 컴포넌트 개념이라고 생각하면 된다.<br> <code>hashRouter</code>를 사용하는 경우 현재 프로젝트와 동일하게 작업을 하면 된다.<br>  그러나 <code>browserRouter</code>를 사용하는 경우에는 아래와 같이 webpack.config 파일 설정이 필요하다. </p>
+<h2 id="Router-v4-browserRouter"><a href="#Router-v4-browserRouter" class="headerlink" title="Router v4 - browserRouter"></a>Router v4 - browserRouter</h2><p> <code>react-router v4</code>부터는 라우터가 컴포넌트 개념이라고 생각하면 된다.<br> <code>hashRouter</code>를 사용하는 경우 현재 프로젝트와 동일하게 작업을 하면 된다.<br>  그러나 <code>browserRouter</code>를 사용하는 경우에는 아래와 같이 webpack.config 파일 설정이 필요하다. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">   ...</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.join(__dirname,<span class="string">'src'</span>),</span><br><span class="line">        disableHostCheck: <span class="literal">true</span>, <span class="comment">// realgrid때문에 host파일 설정을 하는데 설정을 해줘야 lululala.co.kr이런식으로 접근할 수 있다.</span></span><br><span class="line">        historyApiFallback: <span class="literal">true</span>  <span class="comment">// browserRouter사용하는 경우 /밑에 app안에 정의된 router 로 이동할 수 있다.</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>browserRouter를 사용하는 경우에  <a href="http://www.lululala.co.kr/rocket/LUXButton" target="_blank" rel="noopener">www.lululala.co.kr/rocket/LUXButton</a> –&gt; 이 경우 build된 파일의 경로를 바로 잡지 못해 아래와 같은 에러가 발생한다.<br>이는 해당 주소를 서버에 요청하면 서버 쪽 라우터에서 먼저 연결할 곳이 있는지 확인해보고 없으면 오류가 발생한다.<br>이를 해결하기 위해서는 webpack에서 publicPath 설정을 해야한다.<br><code>publicPath</code>란 서비스가 시작되는 루트경로를 제외한 상대경로를 설정하는 것이다.  즉, 웹팩에 의해 빌드될 때 사용되는 경로이다. </p>
 <table>
@@ -241,6 +304,24 @@ babel7+ 버전부터는 babel-plugin-syntax-trailin">
 <h2 id="Router-Splitting"><a href="#Router-Splitting" class="headerlink" title="Router Splitting"></a>Router Splitting</h2><p>기존에는  react-loadable 라이브러리를 사용하여 페이지가 로더될 때와 로딩될 때를 구분하여 사용할 수 있었다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> loadable <span class="keyword">from</span> <span class="string">'react-loadable'</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> AboutComponentPage = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">import</span>(<span class="string">'./about'</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> AsynAboutComponent = loadable( &#123;</span><br><span class="line">    loader: AboutComponentPage, <span class="comment">// 로드될 페이지</span></span><br><span class="line">    loading: Loading <span class="comment">//로딩 될때</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>react 16.6 부터 react에서 지원하는 Lazy, Suspense를 사용하면 된다.<br>dynamic import 를 통해서 사용한다. 아직 로딩이 되지 않은 lazy컴포넌트의 fallback을 suspense 를 통해 표시할 수 있다. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Suspense, lazy &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">const</span> ErrorDialogComponent = lazy(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./Documents/LUXErrorDialog/ErrorDialogDocument'</span>));</span><br><span class="line"><span class="keyword">const</span> Loading = <span class="function"><span class="params">()</span> =&gt;</span> &lt;div&gt;loading...&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp"> </span></span><br><span class="line"><span class="regexp">render&#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">        &lt;Suspense fallback=&#123;&lt;Loading /</span>&gt;&#125;&gt;</span><br><span class="line">            &lt;Route path=&#123;<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.props.match.path&#125;</span>/LUXButton`</span>&#125; render=&#123;(props) =&gt; &lt;ErrorDialogComponent &#123;...props&#125; /&gt;&#125; onEnter=&#123;scrollToTop&#125;/&gt;</span><br><span class="line">        &lt;/Suspense&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="webpack4"><a href="#webpack4" class="headerlink" title="webpack4"></a>webpack4</h2><pre><code>1. 기본적으로 설정되어 있는 development모드와 production모드가 생김
+
+2. 빌드 속도가 빨라짐
+
+3.  webpack core와 webpack-cli가 분리됨
+
+4.  CommonsChunkPlugin이 deprecated 되고 SplitChunksPlugin이 내장되어 있음 
+</code></pre><p>splitChunk 는 대형 프로젝트에서 거대한 번들 파일을 적절히 분리하고 나눌 수 있다.  파일 사이즈, 비동기 요청 횟수 등의 옵션에 따라 자동으로 분리할 수 있고 정규식에 따라서 특정 파일들만 분리할 수 있다. 또한 특정 엔트리 포인트를 분리할 수 있다.</p>
+<p>번들 파일을 적절히 분리하면 브라우저 캐시를 전략적으로 활용할 수 있으며 초기 로딩속도를 최적화 할 수 있다. </p>
+<p>cacheGroups 는 특정 파일을 청크로 분리할 때 사용된다.</p>
+<p>commons은 청크를 분리한다.</p>
+<p>test 를 사용해  대상이 되는 파일을 정규식으로 잡는다.</p>
+<p>name은 청크로 분리할 때 이름으로 사용될 파일명이다. 여기서는 output.filename옵션에  [name]에 대치될 내용이다.  </p>
+<p>chunks는 모듈의 종류에 따라 청크에 포함할지 말지를 결정하는 옵션이다. 옵션으로는 initial, async, all이 있다. all 은 test조건에 포함되는 모든 것을 분리하겠다는 뜻이다. initial은 초기 로딩에 필요한 경우 async는 import를 이용해 다이나믹하게 사용되는 경우에 분리한다.</p>
+<p>common은 모듈이 여러 청크 사이에서 두 번 이상 공유되는 경우 생성 한 다음 새 청크를 형성하는 경우이를 피할 수 있다.</p>
+<p>AsyncChunkNames 플러그인은 import 요청한 파일 이름을 분석하여 청크 이름을 추측하여 청크파일 이름을 생성한다. 파일명의 이름과 같게 생성을 한다. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">env, options</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> config = &#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    optimization: &#123;</span><br><span class="line">      splitChunks: &#123;</span><br><span class="line">        cacheGroups: &#123;</span><br><span class="line">          commons: &#123;</span><br><span class="line">            test: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</span><br><span class="line">            name: <span class="string">'vendors'</span>,</span><br><span class="line">            chunks: <span class="string">'all'</span></span><br><span class="line">          &#125;,</span><br><span class="line">            common: &#123;</span><br><span class="line">             name: <span class="string">'common'</span>,</span><br><span class="line">             minChunks: <span class="number">2</span>,</span><br><span class="line">             chunks: <span class="string">"all"</span>,</span><br><span class="line">             priority: <span class="number">10</span>,</span><br><span class="line">             reuseExistingChunk: <span class="literal">true</span>,</span><br><span class="line">             enforce: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>참조: <a href="https://meetup.toast.com/posts/153" target="_blank" rel="noopener">https://meetup.toast.com/posts/153</a><br>   :<a href="https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312" target="_blank" rel="noopener">https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312</a></p>
 
 
                 
