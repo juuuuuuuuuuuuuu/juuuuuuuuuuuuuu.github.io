@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+
+
+    
+        <meta name="description" content="GraphQL(Graph Query Language)이란 페이스북에서 만든 쿼리 언어이다.기존에 RESTful API는 overfetch(요청한것보다 더 많은 정보를 받음) 나 underfetch(rest하나를 완성하려고 많은 소스를 요청 예를 들어, 인스타그램의 경우">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="graphql">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="GraphQL(Graph Query Language)이란 페이스북에서 만든 쿼리 언어이다.기존에 RESTful API는 overfetch(요청한것보다 더 많은 정보를 받음) 나 underfetch(rest하나를 완성하려고 많은 소스를 요청 예를 들어, 인스타그램의 경우">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://juzzing2.github.io.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://juzzing2.github.io.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>graphql - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>-->
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">juzzing's</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/juzzing's">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/javascript">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>graphql</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-02-08
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/graphql/">#GraphQL</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><code>GraphQL</code>(Graph Query Language)이란 페이스북에서 만든 쿼리 언어이다.<br>기존에 <code>RESTful API</code>는 <code>overfetch</code>(요청한것보다 더 많은 정보를 받음) 나 <code>underfetch</code>(rest하나를 완성하려고 많은 소스를 요청 예를 들어, 인스타그램의 경우<br>좋아요api, 사용자 api, 게시물 api등등) 의 문제점들이 있었다. 또한 ios, android 에서 필요한 정보들이 달라<br>각각 API를 구현하는 것이 힘들었다. </p>
+<h2 id="GraphQL-vs-RESTful"><a href="#GraphQL-vs-RESTful" class="headerlink" title="GraphQL vs RESTful"></a>GraphQL vs RESTful</h2><p><code>GraphQL</code>는  전체 API를 위해서 단 하나의 Endpoint만 사용하며 사용자의 응답의 구조를 내가 원하는 대로 바꿀 수 있다.<br>또한 서로 다른 모양의 다양한 요청들에 대해 응답할 수 있어야 할 때, 대부분의 요청이 CRUD(Create-Read-Update-Delete) 에 해당할 때 사용한다.<br><code>RESTful API</code>는 리소스마다 하나의 Endpoint를 가지며 주로 api를 작성할때 이미 정해놓은 구조로만 응답이 오게 된다.<br>또한 HTTP 와 HTTPs 에 의한 Caching 을 잘 사용하고 싶을 때, File 전송 등 단순한 Text 로 처리되지 않는 요청들이 있을 때, 요청의 구조가 정해져 있을 때<br>주로 사용한다. </p>
+<p>그러나 API를 섞어서 사용자 정보등륵은 resful을 사용하고 정보수정은 graphql을 사용한다면<br>api의 품질을 떨어뜨릴 수 있다.<br>현재 프로젝트에 어떤것을 사용할지 결정하는 것이 중요하다. </p>
+<h2 id="GraphQL-사용법"><a href="#GraphQL-사용법" class="headerlink" title="GraphQL 사용법"></a>GraphQL 사용법</h2><h3 id="1-프로젝트-세팅"><a href="#1-프로젝트-세팅" class="headerlink" title="1. 프로젝트 세팅"></a>1. 프로젝트 세팅</h3><p>먼저 graphql-yoga를 설치한다. 서버는 nodemon을 사용한다.<br><code>typeDefs</code>는 타입에 대한 정의이다. 여기서는 타입들이 있는 경로이다.<br><code>resolvers</code>는 쿼리를 해결하는 것이다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;GraphQLServer &#125; <span class="keyword">from</span> <span class="string">'graphql-yoga'</span>;</span><br><span class="line"><span class="keyword">import</span> resolvers <span class="keyword">from</span> <span class="string">'./graphql/resolvers'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> server = <span class="keyword">new</span> GraphQLServer(&#123;</span><br><span class="line">    typeDefs: <span class="string">"graphql/schema.graphql"</span>, </span><br><span class="line">    resolvers</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>graphql/schema.graphql 파일</p>
+<p>type을 지정해주는 부분은 어떤 타입으로 받을 건지 각각의 보내는 파라미터까지 타입을 지정해준다.<br>!는 필수값을 의미한다. <code>Query</code>는 단순히 값을 가져올때 사용하고 수정이나 삭제등 변형이 가해지는 것들은 <code>Mutation</code>으로 분리한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">type Movie &#123;</span><br><span class="line"> id: Int!</span><br><span class="line"> name: <span class="built_in">String</span>!</span><br><span class="line"> score: Int!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Movie2 &#123;</span><br><span class="line"> id: Int!</span><br><span class="line"> title: <span class="built_in">String</span>!</span><br><span class="line"> rating: Float!</span><br><span class="line"> summary: <span class="built_in">String</span>!</span><br><span class="line"> language: <span class="built_in">String</span>!</span><br><span class="line"> medium_cover_image: <span class="built_in">String</span>!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type Query &#123;</span><br><span class="line"> movies: [Movie]!</span><br><span class="line"> movie(id: Int!): Movie</span><br><span class="line"> apiMoive(limit: Int, <span class="attr">rating</span>: Float): [Movie2]!</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">type Mutation &#123;</span><br><span class="line"> addMovie(name: <span class="built_in">String</span>!, <span class="attr">score</span>: Int!): Movie!</span><br><span class="line"> deleteMovie(id: Int!): <span class="built_in">Boolean</span>!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-db세팅"><a href="#2-db세팅" class="headerlink" title="2. db세팅"></a>2. db세팅</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> movies = [</span><br><span class="line">    &#123;</span><br><span class="line">        id: <span class="number">0</span>,</span><br><span class="line">        name: <span class="string">"Star Wars - The new one"</span>,</span><br><span class="line">        score: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id: <span class="number">1</span>,</span><br><span class="line">        name: <span class="string">"Avengers - The new one"</span>,</span><br><span class="line">        score: <span class="number">8</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id: <span class="number">2</span>,</span><br><span class="line">        name: <span class="string">"The Godfather I"</span>,</span><br><span class="line">        score: <span class="number">99</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        id: <span class="number">3</span>,</span><br><span class="line">        name: <span class="string">"Logan"</span>,</span><br><span class="line">        score: <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getMovies = <span class="function"><span class="params">()</span> =&gt;</span> movies;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getById = <span class="function"><span class="params">id</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> filteredMovies = movies.filter(<span class="function"><span class="params">movie</span> =&gt;</span> movie.id === id);</span><br><span class="line">    <span class="keyword">return</span> filteredMovies[<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> deleteMovie = <span class="function"><span class="params">id</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> cleanedMovies = movies.filter(<span class="function"><span class="params">movie</span> =&gt;</span> movie.id !== <span class="built_in">String</span>(id));</span><br><span class="line">    <span class="keyword">if</span> (movies.length &gt; cleanedMovies.length) &#123;</span><br><span class="line">        movies = cleanedMovies;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> addMovie = <span class="function">(<span class="params">name, score</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> newMovie = &#123;</span><br><span class="line">        id: <span class="string">`<span class="subst">$&#123;movies.length + <span class="number">1</span>&#125;</span>`</span>,</span><br><span class="line">        name,</span><br><span class="line">        score</span><br><span class="line">    &#125;;</span><br><span class="line">    movies.push(newMovie);</span><br><span class="line">    <span class="keyword">return</span> newMovie;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>이런식으로 db를 세팅할 수 있으며 restful api를 감쌀 수 도 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fetch <span class="keyword">from</span> <span class="string">"node-fetch"</span>;</span><br><span class="line"><span class="keyword">const</span> API_URL = <span class="string">"https://yts.am/api/v2/list_movies.json"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> getAPIMovies = <span class="function">(<span class="params">limit, rating</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> REQUEST_URL = API_URL;</span><br><span class="line">    <span class="keyword">if</span> (limit &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        REQUEST_URL += <span class="string">`limit=<span class="subst">$&#123;limit&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (rating &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        REQUEST_URL += <span class="string">`&amp;minimum_rating=<span class="subst">$&#123;rating&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fetch(REQUEST_URL)</span><br><span class="line">        .then(<span class="function"><span class="params">res</span> =&gt;</span> res.json())</span><br><span class="line">        .json(<span class="function"><span class="params">json</span>=&gt;</span> json.data.moives)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-resolvers-세팅"><a href="#3-resolvers-세팅" class="headerlink" title="3.resolvers 세팅"></a>3.resolvers 세팅</h3><p>resolvers는 쿼리를 쿼리를 해결해 주는 역할을 한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; getById, getMovies, addMovie, deleteMovie, getAPIMovies &#125; <span class="keyword">from</span> <span class="string">'./db'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> resolvers = &#123;</span><br><span class="line">    Query: &#123;</span><br><span class="line">        movies: <span class="function"><span class="params">()</span> =&gt;</span> getMovies(),</span><br><span class="line">        movie: <span class="function">(<span class="params">_, &#123; id &#125;</span>) =&gt;</span> getById(id)</span><br><span class="line">        APIMovies: <span class="function">(<span class="params">_, &#123; rating, limit &#125;</span>) =&gt;</span> getAPIMovies(limit, rating)</span><br><span class="line">    &#125;,</span><br><span class="line">    Mutation: &#123;</span><br><span class="line">        addMovie: <span class="function">(<span class="params">_, &#123; name, score &#125;</span>) =&gt;</span> addMovie(name, score),</span><br><span class="line">        deleteMovie: <span class="function">(<span class="params">_, &#123; id &#125;</span>) =&gt;</span> deleteMovie(id)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> resolvers;</span><br></pre></td></tr></table></figure></p>
+<p>서버를 실행하면<br><img src="/images/graphql.png" alt=""><br>원하는 정보만 쿼리를 날려서 사용하면 된다. </p>
+<p>생각보다 너무 간단하고 쉽다. 또한 GraphQL에서 제공해주고 있는 툴은 현재 내가 가지고 있는 API들을 한눈에 볼 수 있으며<br>너무 편리하다. 기회가 되면 사용하는 프로젝트에 적용해보고 싶다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
