@@ -13,6 +13,8 @@
 
 
     
+        <meta name="description" content="window는 브라우저 전체를 담당하는 객체이다. 모든 객체의 조상이다. 전역객체라고 한다.document는 html에 관한 것들을 담당하는 객체이다.태그를 선택하는 방법에는 id, name, tag, class가 있다.document.getElementById, do">
+    
 
     <!--Author-->
     
@@ -21,10 +23,12 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="window vs document">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="window는 브라우저 전체를 담당하는 객체이다. 모든 객체의 조상이다. 전역객체라고 한다.document는 html에 관한 것들을 담당하는 객체이다.태그를 선택하는 방법에는 id, name, tag, class가 있다.document.getElementById, do">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2019/3 - Hexo</title>
+    <title>window vs document - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -162,75 +166,62 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2019/3</h1>
+                <div class="post-heading">
+                    <h1>window vs document</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-03-27
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/03/27/window-document/">
-        <h1 class="post-title archive">
-            window vs document
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-03-27
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><code>window</code>는 브라우저 전체를 담당하는 객체이다. 모든 객체의 조상이다. 전역객체라고 한다.<br><code>document</code>는 html에 관한 것들을 담당하는 객체이다.<br>태그를 선택하는 방법에는 id, name, tag, class가 있다.<br><code>document.getElementById</code>, <code>document.getElementsByClassName</code>, <code>document.getElementsByName</code>, <code>document.getElementsByTagName</code></p>
+<p>css선택자로 선택을 할 수 있다.<br><code>document.querySelector(선택자)</code>, <code>document.querySelectorAll(선택자)</code></p>
+<p><code>document.createDocumentFragment()</code>는 가짜 document를 만드는 것이다.<br>document의 태그로 조작하는것은 성능이 매우 떨어진다.<br>보통 반복문을 통해 추가할때 가짜 document을 만들어 여기에 추가하고 한번에 document에 추가한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line"><span class="keyword">var</span> text = <span class="built_in">document</span>.createTextNode(<span class="string">'텍스트'</span>);</span><br><span class="line"><span class="keyword">var</span> fragment = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line">div.appendChild(text);</span><br><span class="line">fragment.appendChild(div);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(fragment);</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2019/03/27/prototype/">
-        <h1 class="post-title archive">
-            프로토타입이란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-03-27
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/03/10/webpack/">
-        <h1 class="post-title archive">
-            webpack이란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-03-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
