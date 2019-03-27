@@ -13,6 +13,9 @@
 
 
     
+        <meta name="description" content="자바스크립트의 모든 객체들은 부모 역할을 하는 객체와 연결이 되어 있다.부모 역할을 하는 객체를 prototype이라고 한다. 
+자바스크립트에서 객체를 생성하는 방법에는 객체 리터럴을 통해서나 생성자를 통해서 만들 수 있다.1234567function A() &amp;#123">
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="프로토타입이란?">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="자바스크립트의 모든 객체들은 부모 역할을 하는 객체와 연결이 되어 있다.부모 역할을 하는 객체를 prototype이라고 한다. 
+자바스크립트에서 객체를 생성하는 방법에는 객체 리터럴을 통해서나 생성자를 통해서 만들 수 있다.1234567function A() &amp;#123">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>page - Hexo</title>
+    <title>프로토타입이란? - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -163,188 +169,64 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>주몽이의 개발일지</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>프로토타입이란?</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-03-27
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/12/19/next-js/">
-        <h2 class="post-title">
-            Next.js
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-12-19
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/12/17/setstate/">
-        <h2 class="post-title">
-            setState
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-12-17
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/12/17/context-api/">
-        <h2 class="post-title">
-            context-api
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-12-17
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/12/04/react16/">
-        <h2 class="post-title">
-            react16 주요기능
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-12-04
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/problem/">
-        <h2 class="post-title">
-            webpack.cofig파일 경로 꼬임 현상
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/closer/">
-        <h2 class="post-title">
-            클로저(closer)란?
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/iterator/">
-        <h2 class="post-title">
-            iterator/generator와 async/await비교
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/cause/">
-        <h2 class="post-title">
-            hexo 포스팅시 404뜨는 경우
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/23/promise-async/">
-        <h2 class="post-title">
-            promise와 async/await비교
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/11/02/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-11-02
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-        <li class="previous"><a href="/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>자바스크립트의 모든 객체들은 부모 역할을 하는 객체와 연결이 되어 있다.<br>부모 역할을 하는 객체를 <code>prototype</code>이라고 한다. </p>
+<p>자바스크립트에서 객체를 생성하는 방법에는 객체 리터럴을 통해서나 생성자를 통해서 만들 수 있다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> AObject = <span class="keyword">new</span> A(); <span class="comment">//함수로 객체 생성</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;; <span class="comment">// 객체 리터럴로 생성 </span></span><br><span class="line"></span><br><span class="line">AObject.prototype</span><br><span class="line">obj.prototype</span><br></pre></td></tr></table></figure></p>
+<p>위와 같이 객체를 생성하면 <code>constructor</code>와 <code>__proto__</code>를 가지고 있다.<br><code>constructor</code>는 생성되었던 함수이며 함수는 object이기 때문에 object의 prototype또한 상속 받아 사용할 수 있다.<br>이러한 것을 <code>프로토타입 체이닝</code>이라고 한다.<br><code>__proto__</code>는 prototype Link이다.</p>
+<p><img src="/images/prototype1.png" alt=""></p>
+<p>이번에 people.prototype.gender 속성을 추가했다.<br><img src="/images/prototype2.png" alt=""><br>lee라는 객체에 gender가 없는데 female이라는 값이 찍히는 것을 볼 수 있다. </p>
+<p><code>__proto__</code>을 타고 가보면 객체가 생성될 때 조상이었던 함수의 prototype object를 가리키고 있다.<br><img src="/images/prototype3.png" alt=""><br>즉, lee가 gender속성을 가지고 있지 않기 때문에 gender라는 속성을 찾을 때 까지 상위 프로토타입을 검색한다.<br>또한 최상위의 object의 prototype object에 도달함에도 찾지 못할때는 undefined를 리턴한다.<br>이렇게 상위 프로토타입과 연결되어 있는 형태를 <code>프로토타입 체인</code>이라고 한다. </p>
+<p>쉽게 그림으로 나타내면 이런식이 되는거다.<br><img src="/images/prototype4.png" alt=""></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr>
