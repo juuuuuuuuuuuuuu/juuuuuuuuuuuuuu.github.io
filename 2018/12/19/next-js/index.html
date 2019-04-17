@@ -69,7 +69,7 @@
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
     <!--<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>-->
     <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>-->
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href>
     <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -205,10 +205,10 @@
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p><code>Next.js</code>란 리액트 프레임워크이다.<br>서버사이드 랜더링(SSR)을 지원하며 프론트 엔드를 위한 서버이다. 실제로 서버에서 사용할 코드를 주며 빌드되지 않고<br>서버위에서 동작한다.<br><code>CRA</code>는 빌드된 파일이 소스로 올라가며 클라언트 랜더링이다.</p>
-<p><code>서버사이드 렌더링(SSR)</code>과 <code>클라이언트 렌더링</code>의 차이점?<br><code>서버사이드 렌더링(SSR)</code>은 웹사이트 접속해서 나에게 보여기지 전에 서버가 모든 데이터(모든 html)를 가져와서 보인다.<br>그래서 페이지 이동을 할 때 불필요하게 로딩 페이지가 있을 필요가 없다.<br>즉, 백엔드에 변환된 html이 복사되어 클라이언트에게 전달한다. next.js위에 백엔드 노드 서버가 있고 웹사이트를 갈 때마다<br>react.js를 가져온다(익스프레스 서버)<br>아래 그림은 next.js프로젝트의  index.html파일이다.<br><img src="/images/next_html.png" alt=""></p>
+<p><code>서버사이드 렌더링(SSR)</code>과 <code>클라이언트 렌더링</code>의 차이점?<br><code>서버사이드 렌더링(SSR)</code>은 웹사이트 접속해서 나에게 보여기지 전에 서버가 모든 데이터(모든 html)를 가져와서 보인다.<br>그래서 페이지 이동을 할 때 불필요하게 로딩 페이지가 있을 필요가 없다.<br>즉, 백엔드에 변환된 html이 복사되어 클라이언트에게 전달한다. next.js위에 백엔드 노드 서버가 있고 웹사이트를 갈 때마다<br>react.js를 가져온다(익스프레스 서버)<br>아래 그림은 next.js프로젝트의  index.html파일이다.<br><img src="/images/next_html.png" alt></p>
 <p><code>클라이언트 렌더링</code>은 서버는 작은 html과  js파일을 주고 클라이언트에서 js파일을 읽어서 로딩을 한다. js파일을 받는데<br>렌더링 되는동안에는 클라이언트에서는 화면을 볼 수 없다.</p>
-<p>실제로 확인해보면 해당 페이지를 누를 때마다 해당 js파일을 불러오고 있다.<br>최초에는 index.js파일만 불러온다.<br><img src="/images/next_index.png" alt=""></p>
-<p>about을 누르면 해당 about.js파일을 불러오는 것을 볼 수 있다.<br>이게 바로 서버사이드랜더링이다.<br><img src="/images/next_about.png" alt=""></p>
+<p>실제로 확인해보면 해당 페이지를 누를 때마다 해당 js파일을 불러오고 있다.<br>최초에는 index.js파일만 불러온다.<br><img src="/images/next_index.png" alt></p>
+<p>about을 누르면 해당 about.js파일을 불러오는 것을 볼 수 있다.<br>이게 바로 서버사이드랜더링이다.<br><img src="/images/next_about.png" alt></p>
 <p>페이지를 동적으로 생성한다.<br>서버가 실제로 props로 각 데이터들을 가지고 script태그에 넣는 것이다.<br>react앱은 NEXT_DATA script를 hydrate하게 프로그래밍하게 되어있다..?</p>
 <p>서버를 기반으로 돌아가게 하려면 server.js에 서버를 세팅한다.</p>
 <p>app.js =&gt; app컴포넌트는 일반 컴포넌트들 보다 최상위에 존재한다. 기존에 HoC랑 같다. 그래서 헤더영역이나 공통으로<br>모든 페이지마다 들어가야할 요소를 app.js에 세팅한다.</p>

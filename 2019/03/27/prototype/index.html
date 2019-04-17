@@ -69,7 +69,7 @@
     <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
     <!--<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>-->
     <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>-->
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href>
     <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -207,10 +207,10 @@
                 <p>자바스크립트의 모든 객체들은 부모 역할을 하는 객체와 연결이 되어 있다.<br>부모 역할을 하는 객체를 <code>prototype</code>이라고 한다. </p>
 <p>자바스크립트에서 객체를 생성하는 방법에는 객체 리터럴을 통해서나 생성자를 통해서 만들 수 있다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> AObject = <span class="keyword">new</span> A(); <span class="comment">//함수로 객체 생성</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;; <span class="comment">// 객체 리터럴로 생성 </span></span><br><span class="line"></span><br><span class="line">AObject.prototype</span><br><span class="line">obj.prototype</span><br></pre></td></tr></table></figure></p>
 <p>위와 같이 객체를 생성하면 <code>constructor</code>와 <code>__proto__</code>를 가지고 있다.<br><code>constructor</code>는 생성되었던 함수이며 함수는 object이기 때문에 object의 prototype또한 상속 받아 사용할 수 있다.<br>이러한 것을 <code>프로토타입 체이닝</code>이라고 한다.<br><code>__proto__</code>는 prototype Link이다.</p>
-<p><img src="/images/prototype1.png" alt=""></p>
-<p>이번에 people.prototype.gender 속성을 추가했다.<br><img src="/images/prototype2.png" alt=""><br>lee라는 객체에 gender가 없는데 female이라는 값이 찍히는 것을 볼 수 있다. </p>
-<p><code>__proto__</code>을 타고 가보면 객체가 생성될 때 조상이었던 함수의 prototype object를 가리키고 있다.<br><img src="/images/prototype3.png" alt=""><br>즉, lee가 gender속성을 가지고 있지 않기 때문에 gender라는 속성을 찾을 때 까지 상위 프로토타입을 검색한다.<br>또한 최상위의 object의 prototype object에 도달함에도 찾지 못할때는 undefined를 리턴한다.<br>이렇게 상위 프로토타입과 연결되어 있는 형태를 <code>프로토타입 체인</code>이라고 한다. </p>
-<p>쉽게 그림으로 나타내면 이런식이 되는거다.<br><img src="/images/prototype4.png" alt=""></p>
+<p><img src="/images/prototype1.png" alt></p>
+<p>이번에 people.prototype.gender 속성을 추가했다.<br><img src="/images/prototype2.png" alt><br>lee라는 객체에 gender가 없는데 female이라는 값이 찍히는 것을 볼 수 있다. </p>
+<p><code>__proto__</code>을 타고 가보면 객체가 생성될 때 조상이었던 함수의 prototype object를 가리키고 있다.<br><img src="/images/prototype3.png" alt><br>즉, lee가 gender속성을 가지고 있지 않기 때문에 gender라는 속성을 찾을 때 까지 상위 프로토타입을 검색한다.<br>또한 최상위의 object의 prototype object에 도달함에도 찾지 못할때는 undefined를 리턴한다.<br>이렇게 상위 프로토타입과 연결되어 있는 형태를 <code>프로토타입 체인</code>이라고 한다. </p>
+<p>쉽게 그림으로 나타내면 이런식이 되는거다.<br><img src="/images/prototype4.png" alt></p>
 
 
                 

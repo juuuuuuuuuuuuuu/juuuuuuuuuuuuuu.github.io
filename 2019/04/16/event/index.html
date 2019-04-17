@@ -13,7 +13,8 @@
 
 
     
-        <meta name="description" content="얼마전에 엄청 놀라운 것을 발견했다.react 16.4버전 이상 미지원 react-tap-event-plugin 를 지원하지 않아 onTouchTap이 작동하지 않게 되어 찾아보던 중material-ui 신규 라이브러리에서 알게된 사실이다.123456const btn ">
+        <meta name="description" content="jquery를 공부하면서 알게 된 이벤트에 대해서 정리해보자
+1. on / off 차이element에 이벤트를 정의할 때는 on을 사용한다.on의 첫번째 인자에는 object형태로 여러개의 이벤트들이 바인딩 될 수 있다.두번째 인자는 선택한 요소의 자손을 필터링하여 이">
     
 
     <!--Author-->
@@ -23,12 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="몰랐던 사실 (컴포넌트 생성)">
+        <meta property="og:title" content="jquery 이벤트 (on, off)">
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="얼마전에 엄청 놀라운 것을 발견했다.react 16.4버전 이상 미지원 react-tap-event-plugin 를 지원하지 않아 onTouchTap이 작동하지 않게 되어 찾아보던 중material-ui 신규 라이브러리에서 알게된 사실이다.123456const btn ">
+        <meta property="og:description" content="jquery를 공부하면서 알게 된 이벤트에 대해서 정리해보자
+1. on / off 차이element에 이벤트를 정의할 때는 on을 사용한다.on의 첫번째 인자에는 object형태로 여러개의 이벤트들이 바인딩 될 수 있다.두번째 인자는 선택한 요소의 자손을 필터링하여 이">
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>몰랐던 사실 (컴포넌트 생성) - Hexo</title>
+    <title>jquery 이벤트 (on, off) - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -174,13 +176,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>몰랐던 사실 (컴포넌트 생성)</h1>
+                    <h1>jquery 이벤트 (on, off)</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2019-01-14
+                            2019-04-16
                         
                     </span>
                 </div>
@@ -196,15 +198,33 @@
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/javascript-jquery/">#javascript, jquery</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>얼마전에 엄청 놀라운 것을 발견했다.<br>react 16.4버전 이상 미지원 <code>react-tap-event-plugin</code> 를 지원하지 않아 <code>onTouchTap</code>이 작동하지 않게 되어 찾아보던 중<br><code>material-ui</code> 신규 라이브러리에서 알게된 사실이다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> btn = <span class="string">'button'</span>;</span><br><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">        &lt;btn/&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>이렇게하면 버튼 태그가 생성된다. 마찬가지로 span, input 다 만들어진다.<br>새롭게 하나 배웠다.</p>
-
+                <p>jquery를 공부하면서 알게 된 이벤트에 대해서 정리해보자</p>
+<h3 id="1-on-off-차이"><a href="#1-on-off-차이" class="headerlink" title="1. on / off 차이"></a>1. on / off 차이</h3><p>element에 이벤트를 정의할 때는 <code>on</code>을 사용한다.<br>on의 첫번째 인자에는 object형태로 여러개의 이벤트들이 바인딩 될 수 있다.<br>두번째 인자는 선택한 요소의 자손을 필터링하여 이벤트를 트리거한다.<br><code>off</code>는 이벤트 핸들러를 제거할 때 사용한다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//기본 사용법 </span></span><br><span class="line">element.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//여러 이벤트 바인딩 </span></span><br><span class="line">element.on(&#123; </span><br><span class="line">  <span class="string">'click'</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;,</span><br><span class="line">  <span class="string">'onchange'</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125; </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad code : 이벤트 바인드 개수가 li 요소 개수만큼 비효율적 </span></span><br><span class="line">$(<span class="string">"ul li"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// good code : ul 태그 하나에 이벤트를 붙인다. 하나의 이벤트 바인딩 </span></span><br><span class="line">$(<span class="string">'ul'</span>).on(<span class="string">'click'</span>, <span class="string">'li'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//이벤트 핸들러 제거 </span></span><br><span class="line">element.off(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>작업을 하던 도중 이벤트가 트리거 될때가 있었다. 이 때는 on/off를 사용하여 해결하였다.<br>클릭을 할 때마다 이벤트가 두번 발생하여 아래와 같이 해결하였다.<br>이 외에도 여러 방법들이 있다.<br>참고: <a href="https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice" target="_blank" rel="noopener">https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.off().on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-css에서-이벤트-막기"><a href="#2-css에서-이벤트-막기" class="headerlink" title="2. css에서 이벤트 막기"></a>2. css에서 이벤트 막기</h3><p>react같은 경우는 바로 render부분에서 이벤트를 막는게 가능했다.<br>그러나 handlebars를 사용하면 selector를 통해 접근하여 이벤트를 제어해야 한다.<br>selector를 탐색하는 것은 브라우저에서 시간이 걸리는 작업이다.<br>일일히 selector를 통해 이벤트를 막는 작업을 안하기 위해 다른 방법을 찾던 중 css에서 이벤트를 막는 속성이 있었다. </p>
+<p><a href="https://ahnheejong.name/articles/less-famous-css-properties/" target="_blank" rel="noopener">https://ahnheejong.name/articles/less-famous-css-properties/</a></p>
+<h3 id="3-input이벤트"><a href="#3-input이벤트" class="headerlink" title="3. input이벤트"></a>3. input이벤트</h3>
 
                 
             </div>
