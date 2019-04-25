@@ -208,6 +208,8 @@
 <p>기존에 객체를 복사한 다음에 업데이트한 값을 setState하는 방식이다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> all = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.state.all);</span><br><span class="line">all.name = <span class="string">'hi'</span>;</span><br><span class="line"><span class="keyword">this</span>.setState(&#123;all&#125;);</span><br></pre></td></tr></table></figure>
 <p>기존의 <code>Object.assign</code>을 대신해서 아래와 값이 사용하면 된다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">    all: &#123;</span><br><span class="line">    ...prevState.all,</span><br><span class="line">    name: <span class="string">'hi'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>function tabHandler (index) P<br>return function tabClickEvent(event) P<br>conosle.log(index);<br>{</p>
+<p>}</p>
 
 
                 
