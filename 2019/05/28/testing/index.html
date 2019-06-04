@@ -13,6 +13,8 @@
 
 
     
+        <meta name="description" content="사실 얼마전까지만해도 단위 테스트를 왜 작성해야하는지 와닿지 않았다.코드를 테스팅하는것도 알고리즘 문제를 풀면서 여러 사이트에서 제공해주는 거로 처음 접했었다.실제로 알고리즘 문제를 사이트에서 풀 때 이렇게 하면 되겠지 했는데 여러 케이스별로 테스팅 코드를 작성해보니 ">
+    
 
     <!--Author-->
     
@@ -21,10 +23,12 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="테스트 코드">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="사실 얼마전까지만해도 단위 테스트를 왜 작성해야하는지 와닿지 않았다.코드를 테스팅하는것도 알고리즘 문제를 풀면서 여러 사이트에서 제공해주는 거로 처음 접했었다.실제로 알고리즘 문제를 사이트에서 풀 때 이렇게 하면 되겠지 했는데 여러 케이스별로 테스팅 코드를 작성해보니 ">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2019 - Hexo</title>
+    <title>테스트 코드 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -162,129 +166,77 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2019</h1>
+                <div class="post-heading">
+                    <h1>테스트 코드</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-05-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/javscript-jest-enzyme/">#javscript, jest, enzyme</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/02/08/graphql/">
-        <h1 class="post-title archive">
-            graphql
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-02-08
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/01/22/v4/">
-        <h1 class="post-title archive">
-            react-router v4
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-22
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>사실 얼마전까지만해도 단위 테스트를 왜 작성해야하는지 와닿지 않았다.<br>코드를 테스팅하는것도 알고리즘 문제를 풀면서 여러 사이트에서 제공해주는 거로 처음 접했었다.<br>실제로 알고리즘 문제를 사이트에서 풀 때 이렇게 하면 되겠지 했는데 여러 케이스별로 테스팅 코드를 작성해보니 문제들이 많았다.<br>테스팅의 중요성을 느끼게 되었다.</p>
+<p>먼저 이 포스팅에는 리액트에서 테스팅 코드를 작성하는 방법에 대해서 정리할 것이다.<br>후에 직접 프로젝트를 하나 만들어서 직접 테스팅 코드를 구현할 것이다.</p>
+<p>###Jest<br>페이스북에서 만든 테스팅 도구이다.<br>기본적으로 CRA로 설치하면 포함되어 있다.<br>jest메소드 확인 : <a href="https://jestjs.io/docs/en/expect.html" target="_blank" rel="noopener">https://jestjs.io/docs/en/expect.html</a></p>
+<p>###react-test-renderer<br>스냅샷 테스팅을 하는 도구이다.<br>컴포넌트를 주어진 설정으로 렌더링하고 그 결과물을 파일로 저장한다.<br>그리고 다음번 테스팅할 때 이전의 결과물과 일치하는지를 확인한다.<br>컴포넌트 내부 메소드를 호출시키고 다시 렌더링시켜서 그 결과물도 스냅샷을 저장시켜 각 상황에 모두 이전에 렌더링했던<br>결과와 일치하는지를 비교할 수 있다.</p>
+<p>###enzyme<br>airbnb에서 만든 리액트 컴포넌트 테스팅도구이다.<br>세밀하게 테스팅가능하며 dom 이벤트 시뮬레이트 및 모든 라이프사이클 확인이 가능하다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2019/01/17/this/">
-        <h1 class="post-title archive">
-            this란
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-17
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/01/15/process-env/">
-        <h1 class="post-title archive">
-            process_env
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-15
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/14/surprise1/">
-        <h1 class="post-title archive">
-            몰랐던 사실 (컴포넌트 생성)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/14/forloop/">
-        <h1 class="post-title archive">
-            forLoop
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/01/10/timelinejs/">
-        <h1 class="post-title archive">
-            timelinejs
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-01-10
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2019/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
