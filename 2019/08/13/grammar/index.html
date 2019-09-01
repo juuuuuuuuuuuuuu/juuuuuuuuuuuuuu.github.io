@@ -13,8 +13,8 @@
 
 
     
-        <meta name="description" content="코드를 작성하다보면 가독성이 좋기 위해서 코드를 짧게 짜는 경우가 있다.특히 논리 연산자를 사용해서 코드를 보기 쉽게 짠다.그러나 조금 헷갈릴 때가 있어 정리가 필요했다.
-&amp;amp;&amp;amp; 연산자A &amp;amp;&amp;amp; B A와 B 모두 true이면 결과는 true이다">
+        <meta name="description" content="코드를 작성시 간결하고 가독성이 좋게 하는 방법에는 여러가지들이 있다.그 중에서도 논리 연산자는 코드를 간결하게 작성할 수 있다.그러나 조금 헷갈릴 때가 있어 정리가 필요했다.
+&amp;amp;&amp;amp; 연산자A &amp;amp;&amp;amp; B A와 B 모두 true이면 결과는 tru">
     
 
     <!--Author-->
@@ -29,8 +29,8 @@
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="코드를 작성하다보면 가독성이 좋기 위해서 코드를 짧게 짜는 경우가 있다.특히 논리 연산자를 사용해서 코드를 보기 쉽게 짠다.그러나 조금 헷갈릴 때가 있어 정리가 필요했다.
-&amp;amp;&amp;amp; 연산자A &amp;amp;&amp;amp; B A와 B 모두 true이면 결과는 true이다">
+        <meta property="og:description" content="코드를 작성시 간결하고 가독성이 좋게 하는 방법에는 여러가지들이 있다.그 중에서도 논리 연산자는 코드를 간결하게 작성할 수 있다.그러나 조금 헷갈릴 때가 있어 정리가 필요했다.
+&amp;amp;&amp;amp; 연산자A &amp;amp;&amp;amp; B A와 B 모두 true이면 결과는 tru">
     
 
     <!--Open Graph Site Name-->
@@ -218,7 +218,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>코드를 작성하다보면 가독성이 좋기 위해서 코드를 짧게 짜는 경우가 있다.<br>특히 논리 연산자를 사용해서 코드를 보기 쉽게 짠다.<br>그러나 조금 헷갈릴 때가 있어 정리가 필요했다.</p>
+                <p>코드를 작성시 간결하고 가독성이 좋게 하는 방법에는 여러가지들이 있다.<br>그 중에서도 논리 연산자는 코드를 간결하게 작성할 수 있다.<br>그러나 조금 헷갈릴 때가 있어 정리가 필요했다.</p>
 <h3 id="amp-amp-연산자"><a href="#amp-amp-연산자" class="headerlink" title="&amp;&amp; 연산자"></a>&amp;&amp; 연산자</h3><p><code>A &amp;&amp; B</code> A와 B 모두 true이면 결과는 true이다.<br>A가 false이면 B를 체크하지 않고 false를 반환한다.</p>
 <h3 id="amp-amp-연산자-활용-예"><a href="#amp-amp-연산자-활용-예" class="headerlink" title="&amp;&amp; 연산자 활용 예"></a>&amp;&amp; 연산자 활용 예</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (value &amp;&amp; value &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>위의 코드는 아래와 같이 간략하게 수정할 수 있다.<br>value가 false이면 false를 반환한다. (value &gt;10은 체크하지 않는다.)<br>value가 true이고 value &gt; 10 이 false이면 false반환한다.<br>또한 위의 조건을 충족한 경우 true를 반환한다.</p>
