@@ -13,10 +13,10 @@
 
 
     
-        <meta name="description" content="클로저란 과연 무엇인가?closer 폐쇄, 닫는다의 의미이다.
+        <meta name="description" content="클로저란 과연 무엇인가?closure 폐쇄, 닫는다의 의미이다.
 자바스크립트를 다루면서 책에는 나왔지만 실제로 아직 사용을 해본 적은 없다.
 클로저는 함수 내부에 함수를 작성하는 것이다.클로저를 사용하는 이유는 다음과 같다.
-1. 사이드 이펙트(side effect) 제">
+1. 사이드 이펙트(side effect) ">
     
 
     <!--Author-->
@@ -26,15 +26,15 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="클로저(closer)란?">
+        <meta property="og:title" content="클로저(closure)란?">
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="클로저란 과연 무엇인가?closer 폐쇄, 닫는다의 의미이다.
+        <meta property="og:description" content="클로저란 과연 무엇인가?closure 폐쇄, 닫는다의 의미이다.
 자바스크립트를 다루면서 책에는 나왔지만 실제로 아직 사용을 해본 적은 없다.
 클로저는 함수 내부에 함수를 작성하는 것이다.클로저를 사용하는 이유는 다음과 같다.
-1. 사이드 이펙트(side effect) 제">
+1. 사이드 이펙트(side effect) ">
     
 
     <!--Open Graph Site Name-->
@@ -61,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>클로저(closer)란? - Hexo</title>
+    <title>클로저(closure)란? - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -180,7 +180,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>클로저(closer)란?</h1>
+                    <h1>클로저(closure)란?</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -208,7 +208,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>클로저란 과연 무엇인가?<br><code>closer</code> 폐쇄, 닫는다의 의미이다.</p>
+                <p>클로저란 과연 무엇인가?<br><code>closure</code> 폐쇄, 닫는다의 의미이다.</p>
 <p>자바스크립트를 다루면서 책에는 나왔지만 실제로 아직 사용을 해본 적은 없다.</p>
 <p>클로저는 함수 내부에 함수를 작성하는 것이다.<br>클로저를 사용하는 이유는 다음과 같다.</p>
 <h4 id="1-사이드-이펙트-side-effect-제어"><a href="#1-사이드-이펙트-side-effect-제어" class="headerlink" title="1. 사이드 이펙트(side effect) 제어"></a>1. 사이드 이펙트(side effect) 제어</h4><p>우선 <code>side effect</code>는 함수에서 값을 반환할 때를 제외하고 무언가를 행할 때를 가르킨다. ( ajax요청이나 timeout생성, console.log선언하는 것도…)<br>보통 ajax, timeout과 같이 코드 흐름을 방해하는 것들이 신경쓰일 때 사용한다.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = []</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123; <span class="comment">//i의 값은 외부함수의 변수가 아님</span></span><br><span class="line">     arr[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> i; <span class="comment">//결국 i에 5가 담기게 되는 이유 ==&gt; 배열을 돌게 되면 마지막으로 i =5가 되는데 return하고 있는 i의 값은 외부함수의 지역변수가 아님</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[index]()); <span class="comment">// 5가 다섯번찍히게 됨</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
