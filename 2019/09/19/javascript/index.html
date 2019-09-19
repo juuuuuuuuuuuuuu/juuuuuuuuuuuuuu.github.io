@@ -13,6 +13,9 @@
 
 
     
+        <meta name="description" content="자바스크립트 엔진의 대표적 예로는 google V8 엔진이 있다.V8엔진은 chrome, nodeJS에서 주로 사용한다.
+V8 엔진V8엔진에는 주로 메모리힙과 콜스택으로 이루어져 있다.memory heap: 메모리 할당이 일어나는 곳call stack: 코드 실행에 따">
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="javascript">
+        <meta property="og:title" content="javascript 엔진">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="자바스크립트 엔진의 대표적 예로는 google V8 엔진이 있다.V8엔진은 chrome, nodeJS에서 주로 사용한다.
+V8 엔진V8엔진에는 주로 메모리힙과 콜스택으로 이루어져 있다.memory heap: 메모리 할당이 일어나는 곳call stack: 코드 실행에 따">
     
 
     <!--Open Graph Site Name-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>javascript - Hexo</title>
+    <title>javascript 엔진 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -170,7 +176,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>javascript</h1>
+                    <h1>javascript 엔진</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -192,13 +198,35 @@
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/javascript/">#javascript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <p>자바스크립트 엔진의 대표적 예로는 <code>google V8</code> 엔진이 있다.<br><code>V8</code>엔진은 <code>chrome, nodeJS</code>에서 주로 사용한다.</p>
+<h3 id="V8-엔진"><a href="#V8-엔진" class="headerlink" title="V8 엔진"></a>V8 엔진</h3><p><code>V8</code>엔진에는 주로 메모리힙과 콜스택으로 이루어져 있다.<br><code>memory heap</code>: 메모리 할당이 일어나는 곳<br><code>call stack</code>: 코드 실행에 따라 호출 스택이 쌓이는 곳<br><img src="/images/javascript_1.png" alt> </p>
+<p><br></p>
+<h3 id="런타임"><a href="#런타임" class="headerlink" title="런타임"></a>런타임</h3><p>프로그램이 실행되고 있는 때 존재하는 곳을 의미한다.<br>web browser에서 작동하는 자바스크립트 측면도 있고 node.js라는 환경에서 구동되는 측면이 존재한다.<br><code>browser</code>와 <code>node.js</code>를 런타임이라고 볼 수 있다.<br>자바스크립트 엔진 외에 dom,ajax,setTimeout과 깉이 브라우저에서 제공해주는 api를 <code>Web API</code>라고 한다.<br><img src="/images/javascript_2png" alt></p>
+<p><br></p>
+<h3 id="호출스택"><a href="#호출스택" class="headerlink" title="호출스택"></a>호출스택</h3><p>자바스크립트는 싱글 쓰레드 기반 언어이다.<br>호출스택은 프로그램 상에서 어디에 있는지 기록하는 자료구조이다.<br>호출스택에 쌓인 함수들이 차근차근 위에서부터 실행이 된다.<br><img src="/images/javascript_5png" alt><br><br><br>초반에 리액트 공부를 시작했을 때 setState가 계속 실행이 되었을 때 아래와 같은 스택 허용치 넘는 에러가 자주 났었다…</p>
+<p><img src="/images/javascript_3png" alt><br><br></p>
+<h3 id="동시성-amp-이벤트-루프"><a href="#동시성-amp-이벤트-루프" class="headerlink" title="동시성 &amp; 이벤트 루프"></a>동시성 &amp; 이벤트 루프</h3><p>호출 스택에서 시간이 엄청 오래걸리는 함수가 있으면 브라우저는 그 동안 아무런 작업을 못하고 대기상태가 된다.<br>결국 에러를 띄우면서 페이지 종료 팝업이 뜬다.<br>(과거 파일뷰어에서 200-300장이 넘는 이미지 파일들을 렌더링할 때 났던 에러였다…)<br>페이지 렌더링 동작을 방해하지 않고 브라우저의 응답도 끊지 않으면서 연산량이 많은 코드를 그러면 어떻게 실행해야할까??<br>답은 비동기 콜백이다!<br>과거에는 ajax를 사용하여 콜백함수로 처리했다.<br>그러다보니 콜백 지옥에 빠지기도 하고 가독성도 떨어지고 수정하기도 힘들었다.<br>그래서 나온 것들이 promise,async 등이 있다.</p>
+
 
                 
             </div>
