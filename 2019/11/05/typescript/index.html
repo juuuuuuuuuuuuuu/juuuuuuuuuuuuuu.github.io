@@ -13,6 +13,11 @@
 
 
     
+        <meta name="description" content="전부터 타입스크립트에 대해서 조금씩 찾아보다가 최근에 chrome-extension 프로젝트에 적용하기로 했다.타입스크립트에 대해서 이렇게 쓰는게 맞는지 잘 모르겠어서 내용들을 조금씩 정리해보려고 한다.
+개요
+마이크로소프트에서 개발하고 관리하는 오픈소스 라이브러리
+어떤">
+    
 
     <!--Author-->
     
@@ -21,10 +26,15 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo">
+        <meta property="og:title" content="typescript 정리">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="전부터 타입스크립트에 대해서 조금씩 찾아보다가 최근에 chrome-extension 프로젝트에 적용하기로 했다.타입스크립트에 대해서 이렇게 쓰는게 맞는지 잘 모르겠어서 내용들을 조금씩 정리해보려고 한다.
+개요
+마이크로소프트에서 개발하고 관리하는 오픈소스 라이브러리
+어떤">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +42,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +61,7 @@
 
     <!-- Title -->
     
-    <title>page - Hexo</title>
+    <title>typescript 정리 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -163,190 +173,93 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>주몽이의 개발일지</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>typescript 정리</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-11-05
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2019/06/04/hook/">
-        <h2 class="post-title">
-            Hooks
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-06-04
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/05/28/testing/">
-        <h2 class="post-title">
-            테스트 코드
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-05-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/05/28/todolist/">
-        <h2 class="post-title">
-            todolist 목록들
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-05-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/04/25/arguments/">
-        <h2 class="post-title">
-            parameter vs arguments
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-04-25
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/04/18/http-https/">
-        <h2 class="post-title">
-            http/https
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-04-18
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/04/16/event/">
-        <h2 class="post-title">
-            jquery 이벤트
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-04-16
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/03/27/window-document/">
-        <h2 class="post-title">
-            window vs document
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-03-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/03/27/prototype/">
-        <h2 class="post-title">
-            프로토타입이란?
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-03-27
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/03/10/webpack/">
-        <h2 class="post-title">
-            webpack이란?
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-03-10
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2019/02/10/portfolio/">
-        <h2 class="post-title">
-            포트폴리오
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2019-02-10
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/typescript-javascript/">#typescript, javascript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-        <li class="previous"><a href="/">&larr;  Newer Posts</a></li>
-    
-    
-        <li class="next"><a href="/page/3/">Older Posts  &rarr;</a></li>
-    
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>전부터 타입스크립트에 대해서 조금씩 찾아보다가 최근에 chrome-extension 프로젝트에 적용하기로 했다.<br>타입스크립트에 대해서 이렇게 쓰는게 맞는지 잘 모르겠어서 내용들을 조금씩 정리해보려고 한다.</p>
+<h3 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h3><ul>
+<li>마이크로소프트에서 개발하고 관리하는 오픈소스 라이브러리</li>
+<li>어떤 브라우저, 호스트, 운영 체제에서 작동</li>
+<li>자바스크립트의 상위 집합으로 ECMAScript 지원</li>
+<li>런타임 환경이 아닌 컴파일 환경에서 타입체크를 해서 오류를 줄여줌<br><br></li>
 </ul>
+<h3 id="실행과정"><a href="#실행과정" class="headerlink" title="실행과정"></a>실행과정</h3><p><img src="/images/ts_1.png" alt></p>
+<ul>
+<li>typescript 코드를 TSC(TypeScript Complier)를 통해서 JavaScript로 변환하며 이때 타입 검사를 한다.</li>
+<li>JavaScript 코드를 node를 통해서 실행하여 process로 만든다.</li>
+</ul>
+<h3 id="타입-제어방법"><a href="#타입-제어방법" class="headerlink" title="타입 제어방법"></a>타입 제어방법</h3><ul>
+<li>타입 어노테이션(type annotation)을 이용하여 변수에 타입을 선언<br><img src="/images/ts_2.png" alt></li>
+</ul>
+<h3 id="설치-및-환경-세팅"><a href="#설치-및-환경-세팅" class="headerlink" title="설치 및 환경 세팅"></a>설치 및 환경 세팅</h3><ul>
+<li>먼저 typescript를 npm 에서 설치한다.</li>
+<li>그 외에 프로젝트에 따라 ts-loader나 필요한 라이브러리를 부수적으로 설치한다.</li>
+</ul>
+<h4 id="tsconfig-json"><a href="#tsconfig-json" class="headerlink" title="tsconfig.json"></a>tsconfig.json</h4><ul>
+<li>타입스크립트를 컴파일 할 때 필요한 설정을 관리</li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr>
