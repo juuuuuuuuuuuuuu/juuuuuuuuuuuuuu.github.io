@@ -96,6 +96,7 @@
 
 
 
+<link rel="alternate" href="/rss2.xml" title="Hexo" type="application/rss+xml">
 </head>
 
 
@@ -153,7 +154,7 @@
                     </li>
                 
                     <li>
-                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                        <a href="https://github.com/juuuuuuuuuuuuuu" rel="external nofollow noopener noreferrer" target="_blank">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -218,7 +219,7 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>TimeLineJS라이브러리를 사용하여 차트 컴포넌트를 만들게 되었다.<br><a href="https://timeline.knightlab.com/" target="_blank" rel="noopener">https://timeline.knightlab.com/</a> 참고</p>
+                <p>TimeLineJS라이브러리를 사용하여 차트 컴포넌트를 만들게 되었다.<br><a href="https://timeline.knightlab.com/" target="_blank" rel="external nofollow noopener noreferrer">https://timeline.knightlab.com/</a> 참고</p>
 <p>외부 라이브러리를 커스텀하면서 가장 힘들었던 점은 컴포넌트화 작업을 하는 부분이었다.<br>나만 쓰는게 아니라 다른 개발자들이 사용할 수 있게 표준화된 컴포넌트를 만드는 일은 참 힘들었다.<br>아래는 개발하면서 힘들었던 점들에 대해 짚어볼 것이다.</p>
 <ol>
 <li>해당 라이브러리는 javascript파일로 되었있지만 모든 기능들을 한 파일에 다 모아놓았다.<br>일일히 다 수정하기에는 너무 일이 커질 거 같아서 필요한 속성들만 받을 수 있게 수정해놓았다.<br>그런데 문제는 babel7.x.x 버전은 ES5 변환 불가능한 것들은 그냥 그대로 읽는거 같다. 하지만 우리 회사 전체 프로젝트는<br>babel 6.x.x 버전은 모든 파일을 ES5로 변환하는 것 같다.<br>(<code>babel</code>: browser가 인식할 수 있는 ES5 문법으로 변환시켜주는 transpiler이다.)<br>해결책으로는 jsx파일로 만들었다. 왜냐하면 공통으로 <code>webpack-dev-server.config.js</code> 파일에 js파일만 babel로 컴파일하기로<br>되어있기 때문이다.<br><img src="/images/webpackconfig.png" alt><br>그러나 큰 문제가 또 발생했다. 개발된 프로젝트를 build돌리면 jsx파일도 컴파일을 시키는 것이다.<br>일일히 수동으로 빌드 돌릴 때마다 jsx파일을 바꿔치기 할 수 도 없다.<br>해결책으로는 package.json에 빌드명령에 <code>npm run build:babel &amp;&amp; npm run build:copy-files</code> 이렇게 되어 있다.<br>src하위 폴더를 다 빌드시키고 copy-files라는 파일에 있는 것들도 함께 빌드를 시키라는 명령어이다.<br>그래서 <code>copy-files.js</code> 파일에 가서 복사할 파일의 경로를 추가하였다. <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* eslint-disable no-console */</span></span><br><span class="line"><span class="keyword">const</span> files = [</span><br><span class="line">    <span class="string">'README.md'</span>,</span><br><span class="line">    <span class="string">'CHANGELOG.md'</span>,</span><br><span class="line">    <span class="string">'LICENSE'</span>,</span><br><span class="line">    <span class="string">'./src/ARITimeLine/ARITimeLineLib.jsx'</span>  <span class="comment">// 이 부분!!! </span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all(</span><br><span class="line">    files.map(<span class="function">(<span class="params">file</span>) =&gt;</span> copyFile(file))</span><br><span class="line">)</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> createPackageFile());</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyFile</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> buildPath = resolveBuildPath(file);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        fse.copy(</span><br><span class="line">            file,</span><br><span class="line">            buildPath,</span><br><span class="line">            (err) =&gt; &#123;</span><br><span class="line">                <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">                resolve();</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;)</span><br><span class="line">        .then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Copied <span class="subst">$&#123;file&#125;</span> to <span class="subst">$&#123;buildPath&#125;</span>`</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -263,7 +264,7 @@
 
                     
                         <li>
-                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank" rel="external nofollow noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -279,8 +280,8 @@
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2020 John Doe<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/" rel="external nofollow noopener noreferrer">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank" rel="external nofollow noopener noreferrer">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/" rel="external nofollow noopener noreferrer">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank" rel="external nofollow noopener noreferrer">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>

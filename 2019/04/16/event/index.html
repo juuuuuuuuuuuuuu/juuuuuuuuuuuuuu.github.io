@@ -96,6 +96,7 @@
 
 
 
+<link rel="alternate" href="/rss2.xml" title="Hexo" type="application/rss+xml">
 </head>
 
 
@@ -153,7 +154,7 @@
                     </li>
                 
                     <li>
-                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                        <a href="https://github.com/juuuuuuuuuuuuuu" rel="external nofollow noopener noreferrer" target="_blank">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -221,7 +222,7 @@
                 <p>jquery를 공부하면서 알게 된 이벤트에 대해서 정리해보자</p>
 <h3 id="1-on-off-차이"><a href="#1-on-off-차이" class="headerlink" title="1. on / off 차이"></a>1. on / off 차이</h3><p>element에 이벤트를 정의할 때는 <code>on</code>을 사용한다.<br>on의 첫번째 인자에는 object형태로 여러개의 이벤트들이 바인딩 될 수 있다.<br>두번째 인자는 선택한 요소의 자손을 필터링하여 이벤트를 트리거한다.<br><code>off</code>는 이벤트 핸들러를 제거할 때 사용한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//기본 사용법 </span></span><br><span class="line">element.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//여러 이벤트 바인딩 </span></span><br><span class="line">element.on(&#123; </span><br><span class="line">  <span class="string">'click'</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;,</span><br><span class="line">  <span class="string">'onchange'</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125; </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad code : 이벤트 바인드 개수가 li 요소 개수만큼 비효율적 </span></span><br><span class="line">$(<span class="string">"ul li"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// good code : ul 태그 하나에 이벤트를 붙인다. 하나의 이벤트 바인딩 </span></span><br><span class="line">$(<span class="string">'ul'</span>).on(<span class="string">'click'</span>, <span class="string">'li'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//이벤트 핸들러 제거 </span></span><br><span class="line">element.off(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>작업을 하던 도중 이벤트가 트리거 될때가 있었다. 이 때는 on/off를 사용하여 해결하였다.<br>클릭을 할 때마다 이벤트가 두번 발생하여 아래와 같이 해결하였다.<br>이 외에도 여러 방법들이 있다.<br>참고: <a href="https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice" target="_blank" rel="noopener">https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.off().on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>작업을 하던 도중 이벤트가 트리거 될때가 있었다. 이 때는 on/off를 사용하여 해결하였다.<br>클릭을 할 때마다 이벤트가 두번 발생하여 아래와 같이 해결하였다.<br>이 외에도 여러 방법들이 있다.<br>참고: <a href="https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice" target="_blank" rel="external nofollow noopener noreferrer">https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.off().on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-css에서-이벤트-막기"><a href="#2-css에서-이벤트-막기" class="headerlink" title="2. css에서 이벤트 막기"></a>2. css에서 이벤트 막기</h3><p>여러개의 태그가 겹쳐져있을 때 특정 태그에 이벤트를 제거하고 싶을 때가 있다.<br>이 때 <code>pointer-events: none;</code>으로 css속성을 주면 된다.<br>그러나 이 속성은 IE 10이하에서는 안된다고 한다.<br>대체 방법으로는 일일히 태그 찾아서 해당 이벤트일 때마 액션을 취해야한다. </p>
 <h3 id="3-input이벤트"><a href="#3-input이벤트" class="headerlink" title="3. input이벤트"></a>3. input이벤트</h3><p>input을 실시간으로 이벤트를 감지할때 react에서는 <code>onchange</code>이벤트를 사용했다.<br>그러나 자바스크립트에서  <code>onchange</code>는 포커스가 해제될 때 발생을 한다. <code>keyup</code>같은 경우는<br>특정 모바일이나 디바이스에 따라 문제가 있다.<br>jquery의 <code>input</code> 이벤트는 input이나 textarea요소에 값이 변경이 되면 동기적으로 발생하는 이벤트이다.<br>모던 브라우저에서 모두 작동을 하나 IE8이하에서는 작동하지 않는다.</p>
 
@@ -256,7 +257,7 @@
 
                     
                         <li>
-                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank" rel="external nofollow noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -272,8 +273,8 @@
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2020 John Doe<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/" rel="external nofollow noopener noreferrer">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank" rel="external nofollow noopener noreferrer">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/" rel="external nofollow noopener noreferrer">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank" rel="external nofollow noopener noreferrer">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>

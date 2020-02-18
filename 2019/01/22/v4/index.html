@@ -132,6 +132,7 @@ babel-loader: 7.0.0">
 
 
 
+<link rel="alternate" href="/rss2.xml" title="Hexo" type="application/rss+xml">
 </head>
 
 
@@ -189,7 +190,7 @@ babel-loader: 7.0.0">
                     </li>
                 
                     <li>
-                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                        <a href="https://github.com/juuuuuuuuuuuuuu" rel="external nofollow noopener noreferrer" target="_blank">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -286,7 +287,7 @@ babel-loader: 7.0.0">
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line"> style,</span><br><span class="line"> color,</span><br><span class="line"> width, <span class="comment">// 가능</span></span><br><span class="line">&#125;  = <span class="keyword">this</span>.props;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line"> style,</span><br><span class="line"> color,</span><br><span class="line"> ...other, ---&gt; 이 부분을 ...other로 수정</span><br><span class="line">&#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
 <h2 id="Router-v4-browserRouter"><a href="#Router-v4-browserRouter" class="headerlink" title="Router v4 - browserRouter"></a>Router v4 - browserRouter</h2><p> <code>react-router v4</code>부터는 라우터가 컴포넌트 개념이라고 생각하면 된다.<br> <code>hashRouter</code>를 사용하는 경우 현재 프로젝트와 동일하게 작업을 하면 된다.<br>  그러나 <code>browserRouter</code>를 사용하는 경우에는 아래와 같이 webpack.config 파일 설정이 필요하다. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">   ...</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.join(__dirname,<span class="string">'src'</span>),</span><br><span class="line">        disableHostCheck: <span class="literal">true</span>, <span class="comment">// realgrid때문에 host파일 설정을 하는데 설정을 해줘야 lululala.co.kr이런식으로 접근할 수 있다.</span></span><br><span class="line">        historyApiFallback: <span class="literal">true</span>  <span class="comment">// browserRouter사용하는 경우 /밑에 app안에 정의된 router 로 이동할 수 있다.</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>browserRouter를 사용하는 경우에  <a href="http://www.lululala.co.kr/rocket/LUXButton" target="_blank" rel="noopener">www.lululala.co.kr/rocket/LUXButton</a> –&gt; 이 경우 build된 파일의 경로를 바로 잡지 못해 아래와 같은 에러가 발생한다.<br>이는 해당 주소를 서버에 요청하면 서버 쪽 라우터에서 먼저 연결할 곳이 있는지 확인해보고 없으면 오류가 발생한다.<br>이를 해결하기 위해서는 webpack에서 publicPath 설정을 해야한다.<br><code>publicPath</code>란 서비스가 시작되는 루트경로를 제외한 상대경로를 설정하는 것이다.  즉, 웹팩에 의해 빌드될 때 사용되는 경로이다. </p>
+<p>browserRouter를 사용하는 경우에  <a href="http://www.lululala.co.kr/rocket/LUXButton" target="_blank" rel="external nofollow noopener noreferrer">www.lululala.co.kr/rocket/LUXButton</a> –&gt; 이 경우 build된 파일의 경로를 바로 잡지 못해 아래와 같은 에러가 발생한다.<br>이는 해당 주소를 서버에 요청하면 서버 쪽 라우터에서 먼저 연결할 곳이 있는지 확인해보고 없으면 오류가 발생한다.<br>이를 해결하기 위해서는 webpack에서 publicPath 설정을 해야한다.<br><code>publicPath</code>란 서비스가 시작되는 루트경로를 제외한 상대경로를 설정하는 것이다.  즉, 웹팩에 의해 빌드될 때 사용되는 경로이다. </p>
 <table>
 <thead>
 <tr>
@@ -321,7 +322,7 @@ babel-loader: 7.0.0">
 <p>common은 모듈이 여러 청크 사이에서 두 번 이상 공유되는 경우 생성 한 다음 새 청크를 형성하는 경우이를 피할 수 있다.</p>
 <p>AsyncChunkNames 플러그인은 import 요청한 파일 이름을 분석하여 청크 이름을 추측하여 청크파일 이름을 생성한다. 파일명의 이름과 같게 생성을 한다. </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function">(<span class="params">env, options</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> config = &#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    optimization: &#123;</span><br><span class="line">      splitChunks: &#123;</span><br><span class="line">        cacheGroups: &#123;</span><br><span class="line">          commons: &#123;</span><br><span class="line">            test: <span class="regexp">/[\\/]node_modules[\\/]/</span>,</span><br><span class="line">            name: <span class="string">'vendors'</span>,</span><br><span class="line">            chunks: <span class="string">'all'</span></span><br><span class="line">          &#125;,</span><br><span class="line">            common: &#123;</span><br><span class="line">             name: <span class="string">'common'</span>,</span><br><span class="line">             minChunks: <span class="number">2</span>,</span><br><span class="line">             chunks: <span class="string">"all"</span>,</span><br><span class="line">             priority: <span class="number">10</span>,</span><br><span class="line">             reuseExistingChunk: <span class="literal">true</span>,</span><br><span class="line">             enforce: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>참조: <a href="https://meetup.toast.com/posts/153" target="_blank" rel="noopener">https://meetup.toast.com/posts/153</a><br>   :<a href="https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312" target="_blank" rel="noopener">https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312</a></p>
+<p>참조: <a href="https://meetup.toast.com/posts/153" target="_blank" rel="external nofollow noopener noreferrer">https://meetup.toast.com/posts/153</a><br>   :<a href="https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312" target="_blank" rel="external nofollow noopener noreferrer">https://itnext.io/react-router-and-webpack-v4-code-splitting-using-splitchunksplugin-f0a48f110312</a></p>
 
 
                 
@@ -354,7 +355,7 @@ babel-loader: 7.0.0">
 
                     
                         <li>
-                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank" rel="external nofollow noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -370,8 +371,8 @@ babel-loader: 7.0.0">
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2020 John Doe<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/" rel="external nofollow noopener noreferrer">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank" rel="external nofollow noopener noreferrer">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/" rel="external nofollow noopener noreferrer">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank" rel="external nofollow noopener noreferrer">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>

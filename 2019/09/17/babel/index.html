@@ -94,6 +94,7 @@
 
 
 
+<link rel="alternate" href="/rss2.xml" title="Hexo" type="application/rss+xml">
 </head>
 
 
@@ -151,7 +152,7 @@
                     </li>
                 
                     <li>
-                        <a href="https://github.com/juuuuuuuuuuuuuu">
+                        <a href="https://github.com/juuuuuuuuuuuuuu" rel="external nofollow noopener noreferrer" target="_blank">
                             
                                 <i class="fa fa-github fa-stack-2x"></i>
                             
@@ -228,7 +229,7 @@
 <p><br></p>
 <h3 id="babelrc"><a href="#babelrc" class="headerlink" title="babelrc"></a>babelrc</h3><p><code>.babelrc</code>라는 파일명으로 프로젝트의 바벨 관련 설정을 등록할 수 있다.<br><code>package.json</code>에서  <code>babel</code>이란 키로 설정을 추가할 수도 있지만 <code>.babelrc</code>을 쓰는게 더 좋은 것 같다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">      <span class="string">"presets"</span>: [</span><br><span class="line">        [<span class="string">"env"</span>, &#123;</span><br><span class="line">           <span class="string">"targets"</span>: &#123;</span><br><span class="line">            <span class="string">"browsers"</span>: [<span class="string">"last 2 versions"</span>, <span class="string">"not ie &lt;= 9"</span>]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">      ],</span><br><span class="line">      <span class="string">"plugins"</span>: [<span class="string">"transform-object-rest-spread"</span>]</span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
-<p>타켓 브라우저를 설정할 수 있다.<br>또한 아직 정식버전에 포함되지 않는 스펙들은 <code>plugin</code>배열로 추가 가능하다.<br>(사용가능한 플러그인: <a href="https://babeljs.io/docs/en/plugins/" target="_blank" rel="noopener">https://babeljs.io/docs/en/plugins/</a>)</p>
+<p>타켓 브라우저를 설정할 수 있다.<br>또한 아직 정식버전에 포함되지 않는 스펙들은 <code>plugin</code>배열로 추가 가능하다.<br>(사용가능한 플러그인: <a href="https://babeljs.io/docs/en/plugins/" target="_blank" rel="external nofollow noopener noreferrer">https://babeljs.io/docs/en/plugins/</a>)</p>
 <p><br></p>
 <h3 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h3><p><code>babel</code>을 사용해서 es6 코드를 에버그린 브라우저에서 사용가능하다.<br>그러나 IE8과 같은 구형브라우저에는 promise,map,set 등등 객체나 메소드 들이 없기 때문에 사용할 수 없다.<br>그래서 <code>@babel/polyfill</code>을 설치해야한다.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/polyfill</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
@@ -271,7 +272,7 @@
 
                     
                         <li>
-                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank">
+                            <a href="https://github.com/juuuuuuuuuuuuuu" target="_blank" rel="external nofollow noopener noreferrer">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -287,8 +288,8 @@
                     
                 </ul>
                 <p class="copyright text-muted">&copy; 2020 John Doe<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/" rel="external nofollow noopener noreferrer">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank" rel="external nofollow noopener noreferrer">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/" rel="external nofollow noopener noreferrer">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank" rel="external nofollow noopener noreferrer">Jonathan Klughertz</a></p>
             </div>
         </div>
     </div>
